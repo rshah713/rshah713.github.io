@@ -5,6 +5,9 @@
     <title>Rohan Shah | Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/timeline.css"> 
+
     <style>
         body {
             background-color: #282828;
@@ -36,6 +39,21 @@
         .btn:hover {
             background-color: #b8bb26;
         }
+        .skill-panel {
+            display: none; /* Hide the skill panel by default */
+            background-color: #3c3836; /* Changed to match gruvbox */
+            color: #ebdbb2;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            transition: all 0.5s ease;
+            width: 30%; /* Added this line to make each skill box less wide */
+            border: 1px solid #ebdbb2; /* Added this line to add a thin outline to each skill box */
+        }
+        .skill-panel:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="text-center">
@@ -58,12 +76,119 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="navbar-nav mx-auto">
-                <a class="nav-link btn" href="#experience">Experience</a>
-                <a class="nav-link btn mx-2" href="#skills">Skills</a>
+                <button class="nav-link btn" id="experienceButton">Experience</button>
+                <button class="nav-link btn mx-2" id="skillsButton">Skills</button> <!-- Removed data-toggle and data-target attributes -->
                 <a class="nav-link btn" href="#projects">Projects</a>
                 <a class="nav-link btn mx-2" href="#resume">Resume</a>
             </div>
         </nav>
     </div>
+    <div class="container">
+        <div class="timeline">
+                <div class="timeline-row">
+                    <div class="timeline-time">
+                        7:45PM<small>Dec 21</small>
+                    </div>
+                    <div class="timeline-content">
+                        <i class="icon-attachment"></i>
+                        <h4>Admin theme!</h4>
+                        <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                    </div>
+                </div>
+        
+                <div class="timeline-row">
+                    <div class="timeline-time">
+                        8:00 AM<small>Dec 18</small>
+                    </div>
+                    <div class="timeline-content">
+                        <i class="icon-code"></i>
+                        <h4>Admin Dashboard!</h4>
+                        <p>
+                            Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="timeline-row">
+                    <div class="timeline-time">
+                        7:25 PM<small>Dec 6</small>
+                    </div>
+                    <div class="timeline-content">
+                        <i class="icon-turned_in_not"></i>
+                        <h4>Best Admin Template!</h4>
+                        <p>Custom C3 graphs, Custom flot graphs, flot graphs, small graphs, Sass, profile and timeline.</p>
+                    </div>
+                </div>
+        
+                <div class="timeline-row">
+                    <div class="timeline-time">
+                        3:55 PM<small>Dec 26</small>
+                    </div>
+                    <div class="timeline-content">
+                        <i class="icon-directions"></i>
+                        <h4>Maxwell Admin</h4>
+                        <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container" id="skillsContainer">
+        <div class="row justify-content-center">
+            <a href="https://www.python.org/" class="skill-panel" target="_blank">
+                <h3>Python</h3>
+                <i class="fab fa-python" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://www.java.com/" class="skill-panel" target="_blank">
+                <h3>Java</h3>
+                <i class="fab fa-java" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://www.javascript.com/" class="skill-panel" target="_blank">
+                <h3>JavaScript</h3>
+                <i class="fab fa-js-square" style="font-size: 1.5em;"></i>
+            </a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="https://www.cplusplus.com/" class="skill-panel" target="_blank">
+                <h3>C++</h3>
+                <i class="fab fa-cuttlefish" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://www.postgresql.org/" class="skill-panel" target="_blank">
+                <h3>PostgreSQL</h3>
+                <i class="fas fa-database" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://www.docker.com/" class="skill-panel" target="_blank">
+                <h3>Docker</h3>
+                <i class="fab fa-docker" style="font-size: 1.5em;"></i>
+            </a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="https://redis.io/" class="skill-panel" target="_blank">
+                <h3>Redis</h3>
+                <i class="fas fa-server" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://flask.palletsprojects.com/" class="skill-panel" target="_blank">
+                <h3>Flask</h3>
+                <i class="fas fa-flask" style="font-size: 1.5em;"></i>
+            </a>
+            <a href="https://firebase.google.com/" class="skill-panel" target="_blank">
+                <h3>Firebase</h3>
+                <i class="fas fa-fire" style="font-size: 1.5em;"></i>
+            </a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#skillsButton').click(function() {
+                $('.skill-panel').toggle(); // Toggle visibility of skill panels when Skills button is clicked
+            });
+            $('#experienceButton').click(function() {
+                $('.timeline').toggle(); // Toggle visibility of experience timeline when Experience button is clicked
+            });
+        });
+    </script>
 </body>
 </html>
+
