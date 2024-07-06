@@ -40,19 +40,23 @@
             background-color: #b8bb26;
         }
         .skill-panel {
-            display: none; /* Hide the skill panel by default */
-            background-color: #3c3836; /* Changed to match gruvbox */
+            display: none; 
+            background-color: #3c3836; 
             color: #ebdbb2;
             border-radius: 15px;
             padding: 20px;
             margin: 10px;
             text-align: center;
             transition: all 0.5s ease;
-            width: 30%; /* Added this line to make each skill box less wide */
-            border: 1px solid #ebdbb2; /* Added this line to add a thin outline to each skill box */
+            width: 30%; 
+            border: 1px solid #ebdbb2; 
         }
         .skill-panel:hover {
             transform: scale(1.05);
+        }
+        .navbar .btn.active {
+        background-color: #b8bb26; 
+        color: #282828;
         }
     </style>
 </head>
@@ -76,10 +80,10 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="navbar-nav mx-auto">
-                <button class="nav-link btn" id="experienceButton">Experience</button>
-                <button class="nav-link btn mx-2" id="skillsButton">Skills</button> <!-- Removed data-toggle and data-target attributes -->
-                <a class="nav-link btn" href="#projects">Projects</a>
-                <a class="nav-link btn mx-2" href="#resume">Resume</a>
+                <button class="nav-link btn mx-2 active" id="experienceButton">Experience</button>
+                <button class="nav-link btn mx-2" id="skillsButton">Skills</button> 
+                <button class="nav-link btn mx-2" id="projectsButton">Projects</button> 
+                <button class="nav-link btn mx-2" id="resumeButton">Resume</button> 
             </div>
         </nav>
     </div>
@@ -87,47 +91,47 @@
         <div class="timeline">
                 <div class="timeline-row">
                     <div class="timeline-time">
-                        7:45PM<small>Dec 21</small>
+                        May 2024 - Present<small>New York, NY</small>
                     </div>
                     <div class="timeline-content">
-                        <i class="icon-attachment"></i>
-                        <h4>Admin theme!</h4>
-                        <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                        <img class="icon-attachment" src="assets/relm.jpg">
+                        <h4>Software Engineering Intern</h4>
+                        <p>Relm AI</p>
                     </div>
                 </div>
         
                 <div class="timeline-row">
                     <div class="timeline-time">
-                        8:00 AM<small>Dec 18</small>
+                        May 2024 - Present<small>Newark, NJ</small>
                     </div>
                     <div class="timeline-content">
-                        <i class="icon-code"></i>
-                        <h4>Admin Dashboard!</h4>
-                        <p>
-                            Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
+                        <img class="icon-attachment" src="assets/njit.jpg" alt="NJIT Logo">
+                        <h4 style="text-align: center;">Honors Research Fellow</h4>
+                        <p style="text-align: center;">
+                            Honors Summer Research Institute (New Jersey Institute of Technology)
                         </p>
                     </div>
                 </div>
         
                 <div class="timeline-row">
                     <div class="timeline-time">
-                        7:25 PM<small>Dec 6</small>
+                        June 2022 - June 2023<small>Manassas, VA</small>
                     </div>
                     <div class="timeline-content">
-                        <i class="icon-turned_in_not"></i>
-                        <h4>Best Admin Template!</h4>
-                        <p>Custom C3 graphs, Custom flot graphs, flot graphs, small graphs, Sass, profile and timeline.</p>
+                        <img class="icon-attachment" src="https://upload.wikimedia.org/wikipedia/commons/5/53/George_Mason_University_logo.svg" alt="NJIT Logo">
+                        <h4>Software Research Intern</h4>
+                        <p style="text-align: center;">Developer Experience Design Lab (George Mason University)</p>
                     </div>
                 </div>
         
                 <div class="timeline-row">
                     <div class="timeline-time">
-                        3:55 PM<small>Dec 26</small>
+                        July 2020 - April 2023<small>Edison, NJ</small>
                     </div>
                     <div class="timeline-content">
-                        <i class="icon-directions"></i>
-                        <h4>Maxwell Admin</h4>
-                        <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                        <img class="icon-attachment" src="assets/codeninjas.png" alt="Code Ninjas Logo">
+                        <h4>Lead Python Instructor</h4>
+                        <p>Code Ninjas</p>
                     </div>
                 </div>
             </div>
@@ -175,20 +179,52 @@
                 <i class="fas fa-fire" style="font-size: 1.5em;"></i>
             </a>
         </div>
+        <iframe id="resumeFrame" class="embed-responsive-item"  src="assets/Shah Rohan Resume.pdf#view=Fit" style="width:80%; height:600px; display: none;"></iframe>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#skillsButton').click(function() {
-                $('.skill-panel').toggle(); // Toggle visibility of skill panels when Skills button is clicked
-            });
-            $('#experienceButton').click(function() {
-                $('.timeline').toggle(); // Toggle visibility of experience timeline when Experience button is clicked
+            // Hide all sections by default
+            $('.skill-panel').hide();
+            $('.timeline').hide();
+            $('#resumeFrame').hide();
+
+            // Show the section corresponding to the active button
+            if ($('#experienceButton').hasClass('active')) {
+                $('.timeline').show();
+            } else if ($('#skillsButton').hasClass('active')) {
+                $('.skill-panel').show();
+            } else if ($('#resumeButton').hasClass('active')) {
+                $('#resumeFrame').show();
+            }
+
+            // Add click event handlers for navbar buttons
+            $('.navbar .btn').click(function() {
+                // Remove 'active' class from all buttons
+                $('.navbar .btn').removeClass('active');
+                // Add 'active' class to clicked button
+                $(this).addClass('active');
+
+                // Hide all sections
+                $('.skill-panel').hide();
+                $('.timeline').hide();
+                $('#resumeFrame').hide();
+
+                // Show the section corresponding to the clicked button
+                if ($(this).is('#experienceButton')) {
+                    $('.timeline').show();
+                } else if ($(this).is('#skillsButton')) {
+                    $('.skill-panel').show();
+                } else if ($(this).is('#resumeButton')) {
+                    $('#resumeFrame').show();
+                }
             });
         });
     </script>
 </body>
 </html>
+
 

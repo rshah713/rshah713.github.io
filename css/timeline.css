@@ -19,6 +19,14 @@
     height: 100%;
     display: block;
 }
+.icon-attachment {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+}
 
 .timeline-row {
     padding-left: 50%;
@@ -79,6 +87,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     line-height: 150%;
+    margin-bottom: 1px; 
 }
 .timeline-row .timeline-content p {
     margin-bottom: 30px;

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+  <style>
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #6c757d;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin: 20px 0;
+      padding: 20px 40px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #6c757d;
+      top: 20px;
+      left: 50%;
+      margin-left: -10px;
+    }
+    .timeline-item .icon {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #ffffff;
+      background-color: #6c757d;
+      border-radius: 50%;
+      padding: 5px;
+    }
+    .timeline-item .description {
+      flex: 1;
+    }
+    .timeline-item .date {
+      flex: 0 0 80px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+    .timeline-item:nth-child(even) .description {
+      order: 2;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) .date {
+      order: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="timeline">
+      <div class="timeline-item d-flex align-items-center">
+        <div class="description">Software Engineer at XYZ Corp</div>
+        <i class="bi bi-briefcase-fill icon"></i>
+        <div class="date">2021 - 2022</div>
+      </div>
+      <div class="timeline-item d-flex align-items-center">
+        <div class="date">2017 - 2021</div>
+        <i class="bi bi-book-fill icon"></i>
+        <div class="description">Completed Bachelor's Degree in CS</div>
+      </div>
+      <div class="timeline-item d-flex align-items-center">
+        <div class="description">Internship at ABC Tech</div>
+        <i class="bi bi-code-slash icon"></i>
+        <div class="date">2020 - 2021</div>
+      </div>
+      <div class="timeline-item d-flex align-items-center">
+        <div class="date">2019</div>
+        <i class="bi bi-award-fill icon"></i>
+        <div class="description">Hackathon Winner</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
