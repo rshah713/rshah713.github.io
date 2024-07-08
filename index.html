@@ -39,7 +39,7 @@
         .btn:hover {
             background-color: #b8bb26;
         }
-        .skill-panel {
+        .skill-panel, .project-panel {
             display: none; 
             background-color: #3c3836; 
             color: #ebdbb2;
@@ -51,34 +51,44 @@
             width: 30%; 
             border: 1px solid #ebdbb2; 
         }
-        .skill-panel:hover {
+        .skill-panel:hover, .project-panel:hover {
             transform: scale(1.05);
+        }
+        #projectsContainer h3 {
+            font-size: 1.3em; 
         }
         .navbar .btn.active {
         background-color: #b8bb26; 
         color: #282828;
         }
+        .project-panel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            padding-bottom: 10px;
+        }
+       
     </style>
 </head>
 <body class="text-center">
     <div class="container">
         <h1 class="display-4 mt-5">Rohan Shah</h1>
         <div class="d-flex justify-content-center mt-3">
-            <a href="mailto:713rohanshah@gmail.com" class="text-decoration-none mx-2">
-                <i class="bi bi-envelope-fill" style="font-size: 50px;"></i>
+            <a href="https://github.com/rshah713" class="text-decoration-none mx-2">
+                <i class="bi bi-github" style="font-size: 50px;"></i>
             </a>
             <a href="https://www.linkedin.com/in/rohan-shah-528504245/" class="text-decoration-none mx-2">
                 <i class="bi bi-linkedin" style="font-size: 50px;"></i>
             </a>
-            <a href="https://github.com/rshah713" class="text-decoration-none mx-2">
-                <i class="bi bi-github" style="font-size: 50px;"></i>
+            <a href="mailto:713rohanshah@gmail.com" class="text-decoration-none mx-2">
+                <i class="bi bi-envelope-fill" style="font-size: 50px;"></i>
             </a>
         </div>
         <img class="rounded-circle img-fluid mt-5" src="assets/rohan-headshot.JPEG" alt="Rohan Headshot" style="width: 300px; height: 300px; object-fit: cover;">
         <div style="background-color: #3c3836; color: #ebdbb2; width: 60%; margin: auto; padding: 20px; border-radius: 5px;">
             <p class="lead mt-3">
                 I'm Rohan, an undergraduate studying Computer Science on a full ride merit scholarship at the Honors College of New Jersey Institute of Technology.
-                <br><br>Currently, I'm a Software Engineering Intern at Relm AI, contributing to the world's first AI-driven real estate search platform. I'm also involved in a research project at NJIT, studying the impact of studying abroad using LLM algorithms.
+                <br><br>Currently, I'm a Software Engineering Intern at Relm AI, contributing to the world's first AI-driven real estate search platform. I'm also conducting a paid research project at NJIT, studying the impact of studying abroad using LLM algorithms.
             </p>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -182,6 +192,27 @@
                 <i class="fas fa-fire" style="font-size: 1.5em;"></i>
             </a>
         </div>
+        <div class="container" id="projectsContainer">
+            <div class="row justify-content-center">
+                <div class="project-panel">
+                    <img src="assets/njitglobalexplorer.png" alt="NJITGlobalExplorer" style="width: 100%; height: 200px; object-fit: cover;">
+                    <h3><a href="https://njitglobalexplorer.me">NJITGlobalExplorer: Study Abroad Analytics <i class="fas fa-external-link-alt"></i></a></h3>
+                    <p>Developed a study abroad analytics dashboard in Chart.js and Bootstrap for NJIT administrators, integrating a Retrieval-
+                        Augmented Generation algorithm with LLaMA-3 LLM. Deployed on a Flask web app with a Gunicorn WSGI server.</p>
+                </div>
+                <div class="project-panel">
+                    <img src="assets/contractflow.png" alt="ContractFlow" style="width: 100%; height: 200px; object-fit: cover;">
+                    <h3><a href="http://github.com/rshah713/ContractFlow">ContractFlow iOS App <i class="fas fa-external-link-alt"></i></a></h3>
+                    <p>Built a mobile app in Python (Kivy) serving 300+ users to manage workflow for contractors, integrating Firebase storage
+                        and core REST API endpoints with automated Xcode deployment.</p>
+                </div>
+                <div class="project-panel">
+                    <img src="assets/gradeanalyzer.png" alt="GradeAnalyzer" style="width: 100%; height: 200px; object-fit: cover;">
+                    <h3><a href="https://github.com/rshah713/GradeAnalyzer">Genesis GradeAnalyzer</a></h3>
+                    <p>Parse Genesis Grade Portal (NJ's Primary Student System) with BeautifulSoup4 to calculate useful grade metrics with intuitive UI programmed in Kivy</p>
+                </div>
+            </div>
+        </div>
         <iframe id="resumeFrame" class="embed-responsive-item"  src="assets/Shah Rohan Resume.pdf#view=Fit" style="width:80%; height:600px; display: none;"></iframe>
     </div>
     <footer style="text-align: center; padding: 20px; color: #ebdbb2;">
@@ -196,12 +227,15 @@
             $('.skill-panel').hide();
             $('.timeline').hide();
             $('#resumeFrame').hide();
+            $('.project-panel').hide();
 
             // Show the section corresponding to the active button
             if ($('#experienceButton').hasClass('active')) {
                 $('.timeline').show();
             } else if ($('#skillsButton').hasClass('active')) {
                 $('.skill-panel').show();
+            } else if ($('#projectsButton').hasClass('active')) {
+                $('.project-panel').show();
             } else if ($('#resumeButton').hasClass('active')) {
                 $('#resumeFrame').show();
             }
@@ -217,12 +251,15 @@
                 $('.skill-panel').hide();
                 $('.timeline').hide();
                 $('#resumeFrame').hide();
+                $('.project-panel').hide();
 
                 // Show the section corresponding to the clicked button
                 if ($(this).is('#experienceButton')) {
                     $('.timeline').show();
                 } else if ($(this).is('#skillsButton')) {
                     $('.skill-panel').show();
+                } else if ($(this).is('#projectsButton')) {
+                    $('.project-panel').show();
                 } else if ($(this).is('#resumeButton')) {
                     $('#resumeFrame').show();
                 }
