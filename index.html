@@ -220,7 +220,7 @@
             </div>
         </div>
     </div>
-    <div class="container rounded" id="contactContainer" style="border-radius: 15px; padding-top: 20px;">
+    <div class="container rounded" id="contactContainer" style="border-radius: 15px; padding-top: 20px; display: none;">
         <h2 class="text-center">Say Hi!</h2>
         <form style="max-width: 500px; margin: auto;" id="contactForm">
             <div class="form-group">
@@ -256,7 +256,7 @@
             // Hide all sections by default
             $('.skill-panel').hide();
             $('.timeline').hide();
-            $('.contact-panel').hide();
+            $('#contactContainer').hide();
             $('.project-panel').hide();
 
             // Show the section corresponding to the active button
@@ -267,7 +267,7 @@
             } else if ($('#projectsButton').hasClass('active')) {
                 $('.project-panel').show();
             } else if ($('#contactButton').hasClass('active')) {
-                $('.contact-panel').show();
+                $('#contactContainer').show();
             }
 
             // Add click event handlers for navbar buttons
@@ -280,7 +280,7 @@
                 // Hide all sections
                 $('.skill-panel').hide();
                 $('.timeline').hide();
-                $('.contact-panel').hide();
+                $('#contactContainer').hide();
                 $('.project-panel').hide();
 
                 // Show the section corresponding to the clicked button
@@ -291,7 +291,7 @@
                 } else if ($(this).is('#projectsButton')) {
                     $('.project-panel').show();
                 } else if ($(this).is('#contactButton')) {
-                    $('.contact-panel').show();
+                    $('#contactContainer').show();
                 }
             });
         });
