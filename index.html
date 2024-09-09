@@ -13,7 +13,8 @@
         posthog.init('phc_aNMlu2Gd4TZgUvJ2RXT5zv4S9BMuY9bOnJLFJRYB1zo',{api_host:'https://us.i.posthog.com', person_profiles: 'always' // or 'always' to create profiles for anonymous users as well
             })
     </script>
-    <style>
+    <style> 
+        /* gruvbox dark theme */
         body {
             background-color: #282828;
             color: #ebdbb2;
@@ -100,8 +101,8 @@
             <div class="navbar-nav mx-auto">
                 <button class="nav-link btn mx-2 active" id="experienceButton">Experience</button>
                 <button class="nav-link btn mx-2" id="skillsButton">Skills</button> 
-                <button class="nav-link btn mx-2" id="projectsButton">Projects</button> 
-                <button class="nav-link btn mx-2" id="resumeButton">Resume</button> 
+                <button class="nav-link btn mx-2" id="projectsButton">Projects</button>
+                <button class="nav-link btn mx-2" id="contactButton">Contact</button>
             </div>
         </nav>
     </div>
@@ -218,7 +219,21 @@
                 </div>
             </div>
         </div>
-        <iframe id="resumeFrame" class="embed-responsive-item"  src="assets/Shah Rohan Resume.pdf#view=Fit" style="width:80%; height:600px; display: none;"></iframe>
+    </div>
+    <div class="container rounded" id="contactContainer" style="border-radius: 15px; padding-top: 20px;">
+        <h2 class="text-center">Say Hi!</h2>
+        <form style="max-width: 500px; margin: auto;" id="contactForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" id="submit-button" class="btn btn-primary">Send</button>
+        </form>
     </div>
     <footer style="text-align: center; padding: 20px; color: #ebdbb2;">
         &copy; 2024 Rohan Shah
@@ -228,10 +243,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+            $('#contactForm').on('submit', function(event) {
+                event.preventDefault();
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+                var e = atob('NzEzcnNoYWhAZ21haWwuY29t');
+                window.location.href = `mailto:${e}?subject=Message from ${name}&body=${message}\n\n`;
+            });
+
             // Hide all sections by default
             $('.skill-panel').hide();
             $('.timeline').hide();
-            $('#resumeFrame').hide();
+            $('.contact-panel').hide();
             $('.project-panel').hide();
 
             // Show the section corresponding to the active button
@@ -241,8 +266,8 @@
                 $('.skill-panel').show();
             } else if ($('#projectsButton').hasClass('active')) {
                 $('.project-panel').show();
-            } else if ($('#resumeButton').hasClass('active')) {
-                $('#resumeFrame').show();
+            } else if ($('#contactButton').hasClass('active')) {
+                $('.contact-panel').show();
             }
 
             // Add click event handlers for navbar buttons
@@ -255,7 +280,7 @@
                 // Hide all sections
                 $('.skill-panel').hide();
                 $('.timeline').hide();
-                $('#resumeFrame').hide();
+                $('.contact-panel').hide();
                 $('.project-panel').hide();
 
                 // Show the section corresponding to the clicked button
@@ -265,8 +290,8 @@
                     $('.skill-panel').show();
                 } else if ($(this).is('#projectsButton')) {
                     $('.project-panel').show();
-                } else if ($(this).is('#resumeButton')) {
-                    $('#resumeFrame').show();
+                } else if ($(this).is('#contactButton')) {
+                    $('.contact-panel').show();
                 }
             });
         });
