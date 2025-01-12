@@ -77,6 +77,10 @@
     </style>
 </head>
 <body class="text-center">
+
+    <div style="position: fixed; top: 20px; right: 10px; opacity: 0.5; pointer-events: auto;">
+        <button id="betaTestButton" class="btn" style="font-size: 12px; padding: 5px 10px; border-radius: 5px;">Test Beta Site (Desktop Only)</button>
+    </div>
     <div class="container">
         <h1 class="display-4 mt-5">Rohan Shah</h1>
         <div class="d-flex justify-content-center mt-3">
@@ -244,6 +248,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
+        document.getElementById('betaTestButton').addEventListener('click', function () {
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                alert('This beta site is designed for desktop. You may experience issues on mobile.');
+            }
+            window.location.href = 'beta-desktop/index.html';
+        });
         document.getElementById('email-link').href = 'mailto:' + atob('NzEzcnNoYWhAZ21haWwuY29t');
         $(document).ready(function() {
             $('#contactForm').on('submit', function(event) {
@@ -256,13 +267,12 @@
                 window.location.href = `mailto:${e}?subject=Message from ${name}&body=${message}\n\n`;
             });
 
-            // Hide all sections by default
+            // hide all sections by default
             $('.skill-panel').hide();
             $('.timeline').hide();
             $('#contactContainer').hide();
             $('.project-panel').hide();
 
-            // Show the section corresponding to the active button
             if ($('#experienceButton').hasClass('active')) {
                 $('.timeline').show();
             } else if ($('#skillsButton').hasClass('active')) {
@@ -273,20 +283,15 @@
                 $('#contactContainer').show();
             }
 
-            // Add click event handlers for navbar buttons
             $('.navbar .btn').click(function() {
-                // Remove 'active' class from all buttons
                 $('.navbar .btn').removeClass('active');
-                // Add 'active' class to clicked button
                 $(this).addClass('active');
 
-                // Hide all sections
                 $('.skill-panel').hide();
                 $('.timeline').hide();
                 $('#contactContainer').hide();
                 $('.project-panel').hide();
 
-                // Show the section corresponding to the clicked button
                 if ($(this).is('#experienceButton')) {
                     $('.timeline').show();
                 } else if ($(this).is('#skillsButton')) {

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About [Ro]ogle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ropa Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #282828;
+            color: #ebdbb2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 24px;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+        .logo span:nth-child(1) { color: #83a598; }
+        .logo span:nth-child(2) { color: #fb4934; }
+        .logo span:nth-child(3) { color: #fabd2f; }
+        .logo span:nth-child(4) { color: #83a598; }
+        .logo span:nth-child(5) { color: #b8bb26; }
+        .logo span:nth-child(6) { color: #fb4934; }
+        .about-content {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .about-name {
+            font-size: 36px;
+            color: #83a598;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .about-description {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #ffffff;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .discover-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #fb4934;
+            border: none;
+            border-radius: 8px;
+            color: #ebdbb2;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .discover-btn:hover {
+            background: #fb6f6f;
+            color: #282828;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/" class="logo">
+            <span>[</span><span>R</span><span>o</span><span>]</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </a>
+    </div>
+
+    <div class="about-content">
+        <div class="about-name">COMING SOON</div>
+        <div class="about-description">
+            I'm working hard to bring you something amazing!
+        </div>
+        <a href="/beta-desktop/index.html" class="discover-btn">Back to Home</a>
+    </div>
+</body>
+</html>
