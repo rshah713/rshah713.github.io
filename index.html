@@ -248,6 +248,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            if (!isMobile) {
+                window.location.href = 'beta-desktop/index.html';
+            }
+        });
         document.getElementById('betaTestButton').addEventListener('click', function () {
             const isMobile = /Mobi|Android/i.test(navigator.userAgent);
             if (isMobile) {
