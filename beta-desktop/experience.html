@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About [Ro]ogle</title>
+    <title>Rohan's Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,83 +12,126 @@
             padding: 20px;
             background-color: #282828;
             color: #ebdbb2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
-        .header {
+        .container {
             display: flex;
-            align-items: center;
             gap: 40px;
-            margin-bottom: 40px;
-        }
-        .logo {
-            font-size: 24px;
-            text-decoration: none;
-            color: #ebdbb2;
-        }
-        .logo span:nth-child(1) { color: #83a598; }
-        .logo span:nth-child(2) { color: #fb4934; }
-        .logo span:nth-child(3) { color: #fabd2f; }
-        .logo span:nth-child(4) { color: #83a598; }
-        .logo span:nth-child(5) { color: #b8bb26; }
-        .logo span:nth-child(6) { color: #fb4934; }
-        .about-content {
-            text-align: center;
-            padding: 20px;
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
-        .about-name {
-            font-size: 36px;
-            color: #83a598;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-in-out;
+        .search-results {
+            flex: 2;
         }
-        .about-description {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #ffffff;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .discover-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #fb4934;
-            border: none;
+        .knowledge-panel {
+            flex: 1;
+            background: #3c3836;
+            padding: 20px;
             border-radius: 8px;
-            color: #ebdbb2;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .result {
+            display: flex;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        .result-logo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #3c3836;
+            padding: 5px;
+            margin-right: -5px;  
+        }
+        .result-content {
+            flex: 1;
+            margin-left: -5px; 
+        }
+        .result-title {
+            font-size: 20px;
+            color: #83a598;
+            margin-bottom: 5px;
+        }
+        .result-title a {
+            color: #83a598;
             text-decoration: none;
         }
-        .discover-btn:hover {
-            background: #fb6f6f;
-            color: #282828;
+        .result-title a:hover {
+            text-decoration: underline;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .result-project-name {
+            color: #928374;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .result-description {
+            color: #ebdbb2;
+            margin-bottom: 10px;
+        }
+        .result-image {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ebdbb2;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <a href="/" class="logo">
-            <span>[</span><span>R</span><span>o</span><span>]</span><span>o</span><span>g</span><span>l</span><span>e</span>
-        </a>
-    </div>
-
-    <div class="about-content">
-        <div class="about-name">COMING SOON</div>
-        <div class="about-description">
-            I'm working hard to bring you something amazing!
+    <div id="header-container"></div>
+    <div class="container">
+        <div class="search-results">
+            <div class="result">
+                <svg class="result-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#83a598"/>
+                </svg>
+                <div class="result-content">
+                    <div class="result-title"><a href="https://capitalone.com/" target="_blank">Software Engineering Intern</a></div>
+                    <div class="result-project-name">Capital One</div>
+                    <div class="result-description">Working under IFX Finance Tech to optimize the data engineering pipeline. Accelerating Apache Spark–based ETL workflows across AWS Glue, EMR, Databricks, and the Enterprise Modeling Platform </div>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStUA6rfoFYAr-0votO43iAYHB5VbxM-PvIlYASMh_LtZ2ZAWLlDOGY3DRHjCHW3w8EjRM&usqp=CAU" alt="Capital One" class="result-image">
+            </div>
+            <div class="result">
+                <svg class="result-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" fill="#b8bb26"/>
+                </svg>
+                <div class="result-content">
+                    <div class="result-title"><a href="https://relm.ai/about" target="_blank">Software Engineering Intern & Co-op</a></div>
+                    <div class="result-project-name">Relm AI</div>
+                    <div class="result-description">Developed LangChain LLM agents to aid in real estate property search. Deployed custom Redis Docker containers to AWS ECR and Lambda to process 2M+ records and improved analysis accuracy by over 98%. Accepted return offer for co-op position/</div>
+                </div>
+                <img src="../assets/relm.jpg" alt="Relm" class="result-image" style="object-fit: fill;">
+            </div>
+            <div class="result">
+                <svg class="result-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#fb4934"/>
+                </svg>
+                <div class="result-content">
+                    <div class="result-title"><a href="https://honors.njit.edu/summer-research-institute/" target="_blank">Honors Research Fellow</a></div>
+                    <div class="result-project-name">New Jersey Institute of Technology (Honors Summer Research Institute)</div>
+                    <div class="result-description">Conducted a paid research project on NJIT's study abroad program. Built an LLM-RAG algorithm and dashboard to present findings to 400+ faculty and scholars.</div>
+                </div>
+                <img src="../assets/njit.jpg" alt="NJIT" class="result-image">
+            </div>
+            <div class="result">
+                <svg class="result-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" fill="#fabd2f"/>
+                </svg>
+                <div class="result-content">
+                    <div class="result-title"><a href="https://devx.cs.gmu.edu/" target="_blank">Software Research Intern</a></div>
+                    <div class="result-project-name">George Mason University (Developer Experience Design Lab)</div>
+                    <div class="result-description">Co-authored research paper: "Exploring the applications of Microtask Programming through the first ever Microtask Programming Hackathon." Optimized JavaScript endpoints performance through rigorous testing, achieving a 95% decrease in runtime errors.</div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/George_Mason_University_logo.svg" alt="George Mason University" class="result-image" style="object-fit: fill; padding: 10px; box-sizing: border-box;">
+            </div>
         </div>
-        <a href="/beta-desktop/index.html" class="discover-btn">Back to Home</a>
+        <div class="knowledge-panel">
+            <img src="../assets/coding.jpg" alt="Coding" style="width: 100%; margin-bottom: 20px; border-radius: 8px;">
+            <p>I'm passionate about software engineering and data science, with experience across finance, AI, and research. I love tackling complex problems and building solutions that make a real impact.<br><br><br>Looking forward to my next opportunity to learn and grow!</p>
+        </div>
     </div>
+    <script src="loadHeader.js"></script>
 </body>
 </html>
