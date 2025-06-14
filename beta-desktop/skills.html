@@ -1,94 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About [Ro]ogle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Ropa Sans', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #282828;
-            color: #ebdbb2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .logo {
-            font-size: 24px;
-            text-decoration: none;
-            color: #ebdbb2;
-        }
-        .logo span:nth-child(1) { color: #83a598; }
-        .logo span:nth-child(2) { color: #fb4934; }
-        .logo span:nth-child(3) { color: #fabd2f; }
-        .logo span:nth-child(4) { color: #83a598; }
-        .logo span:nth-child(5) { color: #b8bb26; }
-        .logo span:nth-child(6) { color: #fb4934; }
-        .about-content {
-            text-align: center;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .about-name {
-            font-size: 36px;
-            color: #83a598;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .about-description {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #ffffff;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .discover-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #fb4934;
-            border: none;
-            border-radius: 8px;
-            color: #ebdbb2;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .discover-btn:hover {
-            background: #fb6f6f;
-            color: #282828;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohan's Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Ropa Sans', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #282828;
+      color: #ebdbb2;
+      line-height: 1.6;
+    }
+    .ai-overview {
+      max-width: 700px;
+      text-align: left;
+      margin-left: 130px;
+    }
+    .ai-overview h2 {
+      font-size: 1.0rem;
+      color: #ebdbb2;
+      margin-bottom: 0.5rem;
+    }
+    .ai-overview h2::before {
+      content: '✨';
+      margin-right: 0.5rem;
+    }
+    .ai-overview h4 {
+      margin: 0.5rem 0;
+    }
+    .ai-overview p {
+      margin: 0.25rem 0 1rem 0;
+      font-size: 1.05rem;
+    }
+    .fade-out {
+        position: relative;
+        max-height: 230px; /* Adjust depending on how many lines you want before the fade */
+        overflow: hidden;
+    }
+
+    .fade-out::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4rem;
+        background: linear-gradient(to bottom, rgba(40,40,40,0) 0%, #282828 100%);
+        pointer-events: none;
+    }
+    .show-more-btn {
+      width: 700px;
+      padding: 12px;
+      background-color: #3c3836;
+      color: #ebdbb2;
+      border: none;
+      border-radius: 25px;
+      font-family: 'Ropa Sans', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 0;
+      margin-top: 16px;
+      margin-left: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .show-more-btn:hover {
+      background-color: #504945;
+    }
+    .hidden-content {
+      display: none;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: #504945;
+      margin: 20px 0;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+      .show-more-btn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <a href="/" class="logo">
-            <span>[</span><span>R</span><span>o</span><span>]</span><span>o</span><span>g</span><span>l</span><span>e</span>
-        </a>
-    </div>
+  <div id="header-container"></div>
+  <script src="loadHeader.js"></script>
 
-    <div class="about-content">
-        <div class="about-name">COMING SOON</div>
-        <div class="about-description">
-            I'm working hard to bring you something amazing!
-        </div>
-        <a href="/beta-desktop/index.html" class="discover-btn">Back to Home</a>
-    </div>
+  <div class="ai-overview">
+    <div class="fade-out" id="fadeWrapper">
+        <h2>AI Overview</h2>
+        <h4>Languages</h4>
+        <p>My development fluency spans across Python, C++, C, Java, JavaScript, and SQL.</p>
+        <h4>Frontend</h4>
+        <p>I'm experienced in building sleek, responsive UIs using HTML/CSS, Bootstrap, Chart.js, Kivy, and Tkinter.</p>
+        <h4>Backend</h4>
+        <p>My stack includes PostgreSQL, FastAPI, Docker, Redis, and Postman on the backend; OpenCV and Spark for data; Firebase and Xcode for mobile; and AWS Lambda, EC2, RDS, and ECR for cloud deployment.</p>
+        <h4>Core Competencies</h4>
+        <p>I bring strong communication, problem-solving, and teamwork abilities to every project, along with a passion for continuous learning and innovation.</p>
+      </div>
+  </div>
+  <button class="show-more-btn" onclick="toggleFade()">
+    Show more
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 10l5 5 5-5" stroke="#ebdbb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="divider" id="divider"></div>
+
+  <script>
+    function toggleFade() {
+        const wrapper = document.getElementById('fadeWrapper');
+        const button = document.querySelector('.show-more-btn');
+        const divider = document.getElementById('divider');
+        wrapper.classList.remove('fade-out');
+        button.style.display = 'none';
+        divider.style.display = 'none';
+    }
+    function toggleContent() {
+      const hiddenContent = document.getElementById('hiddenContent');
+      const button = document.querySelector('.show-more-btn');
+      
+      if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+        hiddenContent.style.display = 'block';
+        button.style.display = 'none';
+      } else {
+        hiddenContent.style.display = 'none';
+        button.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
